@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Currency System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #4ade80;
+    }
+    .description {
+      text-align: center;
+      color: #a1a1aa;
+      margin-bottom: 30px;
+    }
+    .dashboard, .crypto-widget, .features {
+      margin-bottom: 40px;
+    }
+    .card {
+      background-color: #1c1c1e;
+      border: 1px solid #333;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .search-input {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 5px;
+      border: none;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Multi-Currency System</h1>
+    <p class="description">
+      Manage currencies with real-time rates, smart forecasting, historical charts, and complete investment tracking.
+      Built for global finance with security, flexibility, and speed.
+    </p>
+
+    <div class="dashboard">
+      <h2>Live Currency Dashboard</h2>
+      <div class="features-grid">
+        <div class="card">1 INR = 83.1 USD<br><small>Updated just now</small></div>
+        <div class="card">1 INR = 90.4 EUR<br><small>Updated just now</small></div>
+        <div class="card">1 INR = 105.3 GBP<br><small>Updated just now</small></div>
+      </div>
+    </div>
+
+    <div class="crypto-widget">
+      <h2>Crypto Market News</h2>
+      <iframe src="https://widget.coinlib.io/widget?type=full_v2&theme=dark&cnt=10&pref_coin_id=1505"></iframe>
+    </div>
+
+    <input type="text" class="search-input" placeholder="Search features..." onkeyup="searchFeatures(this.value)" />
+
+    <div class="features" id="features">
+      <h2>System Features</h2>
+      <div class="features-grid">
+        <!-- Example feature -->
+        <div class="card">
+          <img src="/images/currency-support.png" alt="Multi-Currency Support">
+          <h3>Multi-Currency Support</h3>
+          <p>Handle multiple currencies (INR, USD, EUR, JPY, etc.) with dynamic addition and formatting.</p>
+        </div>
+        <!-- Repeat the above block for each feature with proper images and titles -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function searchFeatures(term) {
+      const cards = document.querySelectorAll(".features-grid .card");
+      term = term.toLowerCase();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(term) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
